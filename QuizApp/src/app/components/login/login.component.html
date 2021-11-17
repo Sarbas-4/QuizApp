@@ -1,0 +1,125 @@
+
+<div class="row" *ngIf="loginStep">
+    <div class="col s6 offset-s3">
+      <div class="card">
+        <div class="col s6">
+          <h2>Please Login</h2>
+        </div>
+
+        <div class="card-content">
+        <form  (ngSubmit)="instruction()">
+
+  
+              <div class="row">
+                <div class="input-field col s12">
+                  <label>Username</label>
+                  <input type="text" name="Username" #Username ngModel required> 
+                </div>
+              </div>
+
+            
+              <div class="row">
+                <div class="input-field col s12">
+                  <label>Password</label>
+                  <input type="password"  name="Password"  value ="myValue" #Password ngModel required>
+                  <input type="checkbox" onclick="showPass()">Show Password
+                 
+                  
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-primary"   type="submit" (click)="loginPage()" >Login</button>
+                </div>
+              </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+
+  <div class="row" *ngIf="instructionStep" >
+    <form   (ngSubmit)="startQuiz()">
+    <ul style="list-style-type:circle">
+      <h1> Instructions:-</h1>
+      <li> The quizzes consists of questions carefully designed to help you self-assess your comprehension of the information presented on the topics covered in the module.</li>
+      <li> Each question in the quiz is of multiple-choice or "true or false" format. Read each question carefully, and click on the button next to your response that is based on the information covered on the topic in the module.</li>
+      <li> Multiple Attempts - You will have three attempts for this quiz with your highest score being recorded in the grade book.</li>
+      <li> Answers - You may review your answer-choices and compare them to the correct answers after your final attempt</li>
+      <li> To start, click the "Start Quiz" button. When finished, click the "Submit Quiz" button.</li>
+      <li> Only registered users can take graded quizzes</li>
+      <p></p>
+      <button   class="btn btn-success" type="submit">Start Quiz</button>
+    </ul>
+  </form>
+  </div>
+
+
+
+
+
+  <!-- <div class="row" *ngIf="quizStep">
+    
+      <div class="card">
+        <div class="card-body">
+        
+           <div *ngFor="let qn of sequestions; let i=index">
+             <h3>Question{{i+1}}</h3>
+             <p>{{qn.question}}</p>
+             <div class="radio" id="label2">{{qn.option1}}</div>
+             <div class="radio" id="label2">{{qn.option2}}</div>
+             <div class="radio" id="label2">{{qn.option3}}</div>
+             <div class="radio" id="label2">{{qn.option4}}</div>
+           </div>
+          </div>
+
+        </div>
+
+  </div> -->
+
+
+<div class="row" *ngIf="quizStep">
+
+    <h2>Select any one option from below:-</h2>
+
+    
+  <ul>
+    <li *ngFor="let question of quizes[0].questions; let i = index;" >
+
+          {{question.text}}
+          
+        <ul>
+          <label>
+          <li *ngFor="let choice of question.choices;let j=index;" >
+            <input type="radio"    (click)="OnAnswer(j,question.correctChoice)">
+            
+             {{choice}}
+          </li>
+        </label>
+        </ul>
+    </li>
+
+    <br>
+    <button class="btn btn-primary" (click)="onSubmit();">Submit Quiz</button>
+</ul>
+
+
+</div>
+
+
+
+<div class="row" *ngIf="ViewResult">
+
+ 
+  <h3>Your Scored!</h3>
+  <h1>{{results}}/10</h1>
+
+  <!-- <h1>{{totalQuestions}}</h1> -->
+  
+
+</div>

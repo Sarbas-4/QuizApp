@@ -1,0 +1,100 @@
+<!-- <div *ngIf="showMessage" class="alert alert-success" role="alert">
+  Registered Successfully!
+</div> -->
+
+<div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card">
+            <div class="col s6">
+             <h2>Quiz Registration</h2>
+            </div>
+
+            <div *ngIf="showMessage" class="alert alert-success" role="alert">
+              Registered Successfully!
+            </div>
+        <div class="card-content">
+
+
+        <!-- <form #registerForm="ngForm"  *ngIf="showRegistration" (ngSubmit)="success()">
+              <div class="row">
+                <div class="input-field col s12">
+
+                  <label>Name</label>
+                  <input type="text" name="Name" #Name ngModel required>
+                  
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+
+                  <label>Username</label>
+                  <input type="text" name="Username" #Username ngModel required>
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+
+
+                  <label>Password</label>
+                
+                  <input type="password" name="Password"  #Password ngModel required>
+                  <input type="checkbox" onclick="showPass()">Show Password
+                  
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-primary" (click)="addUser(Username.value, Password.value)" type="submit" [disabled]="!registerForm.valid">Submit</button>
+                </div>
+              </div>
+            </form> -->
+
+
+
+            <form  *ngIf="showRegistration" (ngSubmit)="success()">
+
+            <div class="input-group mb-3" >
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Username</span>
+                <input type="text" #username (keyup)="0" class="form-control" placeholder="Enter Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+          
+                <span class="input-group-text" id="basic-addon1">Password</span>
+                <input type="password" #password (keyup)="0" class="form-control" placeholder="Enter Title" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              
+          
+              <div class="input-group mb-3">
+                
+                <button class="btn btn-primary" (click)="addUser(username.value, password.value)" type="submit" >Submit</button>
+              </div>
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+

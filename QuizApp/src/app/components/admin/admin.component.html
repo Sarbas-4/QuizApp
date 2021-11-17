@@ -1,0 +1,27 @@
+
+
+<form class="login100-form validate-form">
+    <br>
+    <div class="wrap-input100 validate-input m-b-26">
+        <span class="label-input100">Admin Id:</span>
+        <input class="input100" type="text" name="AdminName" placeholder="Enter admin name" [(ngModel)]= "iLogin.AdminName">
+        <!-- [(ngModel)]= "iLogin.AdminName" -->
+
+       
+        <span class="focus-input100"></span>
+    </div>
+     <br>
+    <div class="wrap-input100 validate-input m-b-26">
+        <span class="label-input100">Password:</span>
+        <input class="input100" type="password" name="Password" placeholder="Enter Password" [(ngModel)]= "iLogin.Password">
+         <!-- [(ngModel)]= "iLogin.Password" -->
+        <span class="focus-input100"></span>
+    </div>
+    <br>
+    <div class="container-login100-form-btn">
+        <button class="login100-form-btn" type="submit"  (click)="onLogin()">
+            Login
+        </button>
+    </div>
+
+</form>
